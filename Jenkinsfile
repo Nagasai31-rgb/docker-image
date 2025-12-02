@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t nagasai31rgb/docker-image:latest .'
+                sh docker build -t nagasai1997/docker-image:latest .
+
             }
         }
 
@@ -20,7 +21,8 @@ pipeline {
                 )]) {
                     sh """
                         echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                        docker push nagasai31rgb/docker-image:latest
+                        docker push nagasai1997/docker-image:latest
+
                     """
                 }
             }
