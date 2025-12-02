@@ -1,14 +1,8 @@
-pipeline {
+[pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Build Docker Image') {
+     stage('Build Docker Image') {
             steps {
                 sh 'docker build -t nagasai31rgb/docker-image:latest .'
             }
@@ -29,4 +23,5 @@ pipeline {
             }
         }
     }
-}
+}]
+
