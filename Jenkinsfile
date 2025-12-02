@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh docker build -t nagasai1997/docker-image:latest .
+                sh 'docker build -t nagasai1997/docker-image:latest .'
+
 
             }
         }
